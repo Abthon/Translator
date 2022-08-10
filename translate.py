@@ -8,6 +8,9 @@ app = Flask(__name__)
 serviceUrls = ['translate.google.com','translate.goole.co.kr']
 translator = gt.Translator(serviceUrls)
 
+@app.route("/"):
+def start():
+	return "Testing ..."
 
 @app.route("/translate/<text>/from/<source>/<dest>")
 def translate(text,source,dest):
